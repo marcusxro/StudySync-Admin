@@ -72,7 +72,7 @@ const Dashboard: React.FC = () => {
         console.log(`Attempting to ban account with Uid: ${id}`); // Debugging
         axios
             .post('https://studysyncserver-production.up.railway.app/banUser', { Uid: id })
-            .then(res => {
+            .then(() => {
                 setAccounts(accounts.map((account: any) => {
                     if (account.Uid === id) {
                         account.isBanned = true;
@@ -94,7 +94,7 @@ const Dashboard: React.FC = () => {
 
         axios
             .post('https://studysyncserver-production.up.railway.app/recoverUser', { Uid: id })
-            .then(res => {
+            .then(() => {
                 setAccounts(accounts.map((account: any) => {
                     if (account.Uid === id) {
                         account.isBanned = false;
